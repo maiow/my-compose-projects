@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RicknMortyCompose</string>
+    <string name="species_gender">Species and gender:</string>
+    <string name="last_location">Last known location:</string>
+    <string name="episodes">Episodes</string>
+    <string name="live_status">Live status:</string>
+    <string name="retry">Retry</string>
+    <string name="type">Type: %1s</string>
+    <string name="dimension">Dimension: %1s</string>
+    <string name="created">Created: %1s</string>
+    <string name="nav_ic">Navigation Icon</string>
+    <string name="location">Last location:</string>
+</resources>
