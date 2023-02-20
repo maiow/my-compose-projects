@@ -3,7 +3,7 @@ package com.mivanovskaya.ricknmortycompose.data
 import com.mivanovskaya.ricknmortycompose.data.Api.Companion.retrofit
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.EpisodeModel
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.LocationModel
-import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.RicknMortyCharactersModel.Results
+import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel.Results
 
 class MainRepository {
     suspend fun getCharacter(page: Int): List<Results> {

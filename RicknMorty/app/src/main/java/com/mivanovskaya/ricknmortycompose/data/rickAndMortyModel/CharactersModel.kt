@@ -1,6 +1,6 @@
 package com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel
 
-data class RicknMortyCharactersModel(
+data class CharactersModel(
     val info: Info?,
     val results: List<Results>
 ) {

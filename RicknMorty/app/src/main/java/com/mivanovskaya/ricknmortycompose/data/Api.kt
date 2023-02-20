@@ -1,6 +1,6 @@
 package com.mivanovskaya.ricknmortycompose.data
 
-import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.RicknMortyCharactersModel
+import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.EpisodeModel
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.LocationModel
 import retrofit2.Retrofit
@@ -13,7 +13,7 @@ private const val BASE_URL = "https://rickandmortyapi.com"
 
 interface Api {
     @GET("/api/character")
-    suspend fun getCharacter(@Query("page") page: Int): RicknMortyCharactersModel
+    suspend fun getCharacter(@Query("page") page: Int): CharactersModel
 
     @GET("/api/location")
     suspend fun getLocationList(@Query("page") page: Int): LocationModel

@@ -20,7 +20,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mivanovskaya.ricknmortycompose.R
-import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.RicknMortyCharactersModel
+import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel
 import com.mivanovskaya.ricknmortycompose.presentation.MainViewModel
 import com.mivanovskaya.ricknmortycompose.presentation.SetStatusCircle
 import com.mivanovskaya.ricknmortycompose.ui.theme.Gray1200
@@ -160,7 +160,7 @@ fun GrayDetailText(title: String) {
 }
 
 @Composable
-fun StatusRow(character: RicknMortyCharactersModel.Results) {
+fun StatusRow(character: CharactersModel.Results) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         SetStatusCircle(character.status)
         InfoDetailText("${character.status}")

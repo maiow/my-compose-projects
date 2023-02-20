@@ -16,7 +16,7 @@ import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.mivanovskaya.ricknmortycompose.R
-import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.RicknMortyCharactersModel.Results
+import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel.Results
 import com.mivanovskaya.ricknmortycompose.presentation.MainViewModel
 import com.mivanovskaya.ricknmortycompose.presentation.SetStatusCircle
 import com.mivanovskaya.ricknmortycompose.ui.theme.Gray900

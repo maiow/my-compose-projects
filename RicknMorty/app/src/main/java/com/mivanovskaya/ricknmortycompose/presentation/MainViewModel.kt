@@ -11,12 +11,12 @@ import com.mivanovskaya.ricknmortycompose.data.paging.LocationSource
 import com.mivanovskaya.ricknmortycompose.data.MainRepository
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.EpisodeModel
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.LocationModel
-import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.RicknMortyCharactersModel
+import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
-    val characters: Flow<PagingData<RicknMortyCharactersModel.Results>> = Pager(
+    val characters: Flow<PagingData<CharactersModel.Results>> = Pager(
         config = PagingConfig(pageSize = 10),
         pagingSourceFactory = { CharacterSource() }
     ).flow.cachedIn(viewModelScope)
@@ -26,7 +26,7 @@ class MainViewModel : ViewModel() {
         pagingSourceFactory = { LocationSource() }
     ).flow.cachedIn(viewModelScope)
 
-    var result: RicknMortyCharactersModel.Results? = null
+    var result: CharactersModel.Results? = null
     var episodes = emptyList<EpisodeModel>().toMutableList()
 
     fun getEpisodeList(episode: List<String>?) {
