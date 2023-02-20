@@ -105,7 +105,7 @@ fun CharacterItem(character: Results, navController: NavController, viewModel: M
         modifier = Modifier
             .padding(5.dp)
             .clickable {
-                navController.navigate(AllScreen.DetailAllScreen.route)
+                navController.navigate(AllScreen.DetailScreen.route)
                 viewModel.result = character
             }
     ) {

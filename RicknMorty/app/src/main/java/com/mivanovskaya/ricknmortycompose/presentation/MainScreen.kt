@@ -45,7 +45,7 @@ fun MainScreen(viewModel: MainViewModel) {
 @Composable
 fun BottomBar(navController: NavController) {
     val screens = listOf(
-        AllScreen.MainAllScreen,
+        AllScreen.MainScreen,
         AllScreen.LocationScreen
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()

@@ -9,13 +9,13 @@ sealed class AllScreen(
     val title: String,
     val icon: ImageVector
 ) {
-    object MainAllScreen : AllScreen(
+    object MainScreen : AllScreen(
         route = "main_screen",
         title = "Characters",
         icon = Icons.Default.Person
     )
 
-    object DetailAllScreen : AllScreen(
+    object DetailScreen : AllScreen(
         route = "detail_screen",
         title = "Character",
         icon = Icons.Default.Menu
