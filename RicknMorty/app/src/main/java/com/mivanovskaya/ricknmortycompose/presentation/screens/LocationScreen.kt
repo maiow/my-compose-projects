@@ -115,7 +115,7 @@ fun LocationItem(location: Result) {
                 Title(location.name)
                 InfoText(stringResource(R.string.type, location.type))
                 InfoText(stringResource(R.string.dimension, location.dimension))
-                GrayInfoText(stringResource(R.string.created, location.created))
+                GrayInfoText(stringResource(R.string.created, location.created.subSequence(0,10)))
             }
         }
     }
