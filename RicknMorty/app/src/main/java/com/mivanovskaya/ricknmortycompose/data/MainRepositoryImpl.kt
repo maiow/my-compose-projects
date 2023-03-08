@@ -1,11 +1,13 @@
 package com.mivanovskaya.ricknmortycompose.data
 
-import com.mivanovskaya.ricknmortycompose.data.Api.Companion.retrofit
+import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel.Results
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.EpisodeModel
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.LocationModel
-import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel.Results
+import javax.inject.Inject
 
-class MainRepository {
+class MainRepositoryImpl @Inject constructor(
+    private val retrofit: RicknMortyService
+) {
     suspend fun getCharacter(page: Int): List<Results> {
         return retrofit.getCharacter(page).results
     }
