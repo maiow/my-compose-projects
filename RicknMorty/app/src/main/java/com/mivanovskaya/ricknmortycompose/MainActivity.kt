@@ -10,7 +10,9 @@ import com.mivanovskaya.ricknmortycompose.presentation.MainScreen
 import com.mivanovskaya.ricknmortycompose.presentation.MainViewModel
 import com.mivanovskaya.ricknmortycompose.ui.theme.Gray1200
 import com.mivanovskaya.ricknmortycompose.ui.theme.MyApplicationTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels()

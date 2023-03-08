@@ -22,9 +22,7 @@ import com.mivanovskaya.ricknmortycompose.ui.theme.InfoText
 import com.mivanovskaya.ricknmortycompose.ui.theme.Title
 
 @Composable
-fun LocationScreen(
-    viewModel: MainViewModel,
-) {
+fun LocationScreen(viewModel: MainViewModel) {
     val lazyLocationsItems = viewModel.locations.collectAsLazyPagingItems()
 
     LazyColumn {
@@ -115,7 +113,7 @@ fun LocationItem(location: Result) {
                 Title(location.name)
                 InfoText(stringResource(R.string.type, location.type))
                 InfoText(stringResource(R.string.dimension, location.dimension))
-                GrayInfoText(stringResource(R.string.created, location.created.subSequence(0,10)))
+                GrayInfoText(stringResource(R.string.created, location.created.subSequence(0, 10)))
             }
         }
     }

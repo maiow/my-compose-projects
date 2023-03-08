@@ -2,11 +2,12 @@ package com.mivanovskaya.ricknmortycompose.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.mivanovskaya.ricknmortycompose.data.MainRepository
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel
+import com.mivanovskaya.ricknmortycompose.domain.MainRepository
+import javax.inject.Inject
 
-class CharacterSource : PagingSource<Int, CharactersModel.Results>() {
-    private val repository = MainRepository()
+class CharacterSource @Inject constructor(private val repository: MainRepository) :
+    PagingSource<Int, CharactersModel.Results>() {
 
     override fun getRefreshKey(state: PagingState<Int, CharactersModel.Results>): Int = 1
 

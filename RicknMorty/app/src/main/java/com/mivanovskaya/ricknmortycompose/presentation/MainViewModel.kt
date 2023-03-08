@@ -8,22 +8,30 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.mivanovskaya.ricknmortycompose.data.paging.CharacterSource
 import com.mivanovskaya.ricknmortycompose.data.paging.LocationSource
-import com.mivanovskaya.ricknmortycompose.data.MainRepository
+import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.EpisodeModel
 import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.LocationModel
-import com.mivanovskaya.ricknmortycompose.data.rickAndMortyModel.CharactersModel
+import com.mivanovskaya.ricknmortycompose.domain.MainRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val mainRepository: MainRepository,
+    private val characterSource: CharacterSource,
+    private val locationSource: LocationSource
+) : ViewModel() {
+
     val characters: Flow<PagingData<CharactersModel.Results>> = Pager(
         config = PagingConfig(pageSize = 10),
-        pagingSourceFactory = { CharacterSource() }
+        pagingSourceFactory = { characterSource }
     ).flow.cachedIn(viewModelScope)
 
     val locations: Flow<PagingData<LocationModel.Result>> = Pager(
         config = PagingConfig(pageSize = 10),
-        pagingSourceFactory = { LocationSource() }
+        pagingSourceFactory = { locationSource }
     ).flow.cachedIn(viewModelScope)
 
     var result: CharactersModel.Results? = null
@@ -36,7 +44,7 @@ class MainViewModel : ViewModel() {
                 toNumbers.add(it.replace(Regex("[^0-9]"), ""))
             }
             episodes =
-                MainRepository().getEpisodeList(toNumbers.toString()) as MutableList<EpisodeModel>
+                mainRepository.getEpisodeList(toNumbers.toString()) as MutableList<EpisodeModel>
         }
     }
 }
