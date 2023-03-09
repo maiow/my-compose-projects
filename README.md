@@ -1,8 +1,9 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/maiow/my-compose-projects?logo=GitHub&style=plastic)
 
 ## my-compose-projects   
-- RicknMorty: Compose paging and navigation study project with Hilt DI.
-Done with The Rick and Morty API https://rickandmortyapi.com/
+- RicknMorty: **Compose paging and navigation study project with Hilt DI.**
+ 
+ Done with The Rick and Morty API https://rickandmortyapi.com/
 
 Characters paging:
 
