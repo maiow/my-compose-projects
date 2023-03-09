@@ -11,30 +11,16 @@ import com.mivanovskaya.ricknmortycompose.R
 
 @Composable
 fun SetStatusCircle(characterStatus: String?) {
-    when (characterStatus) {
-        "Alive" ->
-            Image(
-                painter = painterResource(id = R.drawable.circle_green),
-                contentDescription = null,
-                Modifier
-                    .padding(end = 8.dp)
-                    .size(12.dp)
-            )
-        "Dead" ->
-            Image(
-                painter = painterResource(id = R.drawable.circle_red),
-                contentDescription = null,
-                Modifier
-                    .padding(end = 8.dp)
-                    .size(12.dp)
-            )
-        else ->
-            Image(
-                painter = painterResource(id = R.drawable.circle_grey),
-                contentDescription = null,
-                Modifier
-                    .padding(end = 8.dp)
-                    .size(12.dp)
-            )
+    val resource = when (characterStatus) {
+        "Alive" -> R.drawable.circle_green
+        "Dead" -> R.drawable.circle_red
+        else -> R.drawable.circle_grey
     }
+    Image(
+        painter = painterResource(resource),
+        contentDescription = null,
+        Modifier
+            .padding(end = 8.dp)
+            .size(12.dp)
+    )
 }
