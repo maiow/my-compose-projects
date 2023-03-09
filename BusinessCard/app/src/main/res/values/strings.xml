@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BusinessCard</string>
+    <string name="full_name">Donna Sherlock</string>
+    <string name="title">Android Developer Extraordinaire</string>
+    <string name="phone">+7 916 123 45 67</string>
+    <string name="reddit">\@Beginning_Android</string>
+    <string name="email">donna.sherlock@android.com</string>
+</resources>
