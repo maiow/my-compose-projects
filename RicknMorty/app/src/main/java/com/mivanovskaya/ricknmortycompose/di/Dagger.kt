@@ -18,11 +18,10 @@ import retrofit2.create
 //    fun inject(activity: MainActivity)
 //}
 
-//TODO: свериться с другими моими hilt apps, это кажется лишним
+//@Module(includes = [NetworkModule::class, AppBindModule::class])
+//@InstallIn(SingletonComponent::class)
+//class AppModule
 
-@Module(includes = [NetworkModule::class, AppBindModule::class])
-@InstallIn(SingletonComponent::class)
-class AppModule
 
 @Module
 @InstallIn(SingletonComponent::class)
